@@ -68,24 +68,20 @@ Closing a window discards its tasks.
 python -m unittest -v test_pyqt
 ```
 
-Eight automated tests passed on Windows with Python 3.13 and PyQt5 5.15.11:
+Eight automated tests passed on macOS with Python 3.14.3 and PyQt5 5.15.11:
 startup, adding and trimming tasks, rejecting empty input, deleting a selected
 duplicate by its index, handling no selection, clearing populated/empty lists,
-backend delegation, and the unchanged Tkinter interface's basic operations.
-Qt tests run offscreen; the Tkinter check requires a desktop session.
+backend delegation, and the Tkinter interface's basic operations. Qt tests run
+offscreen; the Tkinter check requires a desktop session.
 
 ## Git Collaboration Workflow
 
-- Haya's Tkinter contribution is on `feature-tkinter`.
-- Omar's PyQt contribution must be committed and pushed on `feature-pyqt`,
-  created from `main` after Haya's contribution is merged.
-- Each feature is integrated into `main` through a reviewed pull request.
-- After both PRs are merged, test both interfaces from `main`, complete the
-  documentation, and create the final `v1.0` tag and GitHub release.
-
-At preparation time, Haya's branch had not yet been merged and Omar's local
-PyQt files had not yet been pushed. Update this status after the actual merges;
-the test results above concern the locally combined files.
+- Haya's Tkinter contribution was merged from `feature-tkinter` through reviewed
+  pull request #1.
+- Omar's PyQt contribution was merged from `feature-pyqt` through reviewed pull
+  request #2.
+- Both interfaces and the shared backend are integrated on `main`.
+- The integrated test suite was run from `main`; all eight tests passed.
 
 ## Contributions
 
